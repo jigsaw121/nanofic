@@ -9,7 +9,7 @@ Create a branch with create(label, content, path):
 *content* is just plain text, the actual bit of story printed to the user.  
 *path* decides what comes after reading this branch, and it's a bit more tricky - there's a simple parser included that'll evaluate certain expressions and can be used for interactivity:  
 
-"scene1" just goes to the branch with the label "scene1" when Enter is pressed.
-"[scene2:Go to the forest;scene3:Go to the lake]" presents two choices with different targets.
-"?scene4=0{scene5}?scene4=1{scene6}" leads you to either scene5 or scene6 depending on the flag of the branch labelled "scene4". 
+"scene1" just goes to the branch with the label "scene1" when Enter is pressed.  
+"[scene2:Go to the forest;scene3:Go to the lake]" presents two choices with different targets.  
+"?scene4=0{scene5}?scene4=1{scene6}" leads you to either scene5 or scene6 depending on the flag of the branch labelled "scene4".  
 "[scene7=1?{scene9}?scene8=1{?scene7=1{;}scene10}]" If you're using conditionals inside [choice braces], remember that {bracketed expressions} will be expanded literally, so you may need to add semicolons in the case of simultaneously applying conditions.
