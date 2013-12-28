@@ -1,7 +1,7 @@
 nanofic
 =======
 
-A plain interactive fiction engine, originally written for NaNoWriMo use. Features include conditional branching and savestates. Change the content of scene.c to your liking.
+A plain interactive fiction engine, originally written for [NaNoWriMo](http://nanowrimo.org/) use. Features include conditional branching and savestates. Change the content of scene.c to your liking.
 
 Create a branch with create(label, content, path):
 
