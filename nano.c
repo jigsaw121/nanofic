@@ -456,8 +456,7 @@ void savestate() {
     if (emulating() || !save || !save[0]) return;
 
     int i = 0;
-    FILE* fr;
-    fr = fopen(SAVEFILE, "w");
+    FILE* fr = fopen(SAVEFILE, "w");
     if (!fr) {
         printf("Can't open %s for saving state", SAVEFILE);
         return;
@@ -524,8 +523,7 @@ int main(int argc, char* argv[]) {
     get_scenes(data);
 
     if (argc>1) {
-        FILE* fr;
-        fr = fopen(SAVEFILE, "r");
+        FILE* fr = fopen(SAVEFILE, "r");
         if (!fr) {
             printf("Can't open %s for loading savestate", SAVEFILE);
             return 1;
