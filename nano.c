@@ -108,6 +108,8 @@ void p_label(char* s, choiceparser* p);
 int prog = 0;
 
 void addsave(int choice) {
+    if (emulating()) return;
+
     if (prog==0) {
         save = malloc(sizeof(int)*2);
         save[prog] = choice;
@@ -169,7 +171,7 @@ int p_choose(choiceparser* p, int choice) {
             strcpy(p->now->choice, p->choice->nxt);
             printf("\n");
 
-            if (!emulating()) addsave(choice);
+            addsave(choice);
 
             return 0;
         }
@@ -203,12 +205,12 @@ int emulchoose(choiceparser* p, int choice) {
 }
 
 int e_defchoose(choiceparser* p, int choice) {
-    if (!emulating()) addsave(-1);
+    addsave(-1);
     strcpy(p->now->choice, p->eval->nxt);
     return 0;
 }
 int p_defchoose(choiceparser* p, int choice) {
-    if (!emulating()) addsave(-1);
+    addsave(-1);
     strcpy(p->now->choice, p->now->nxt);
     return 0;
 }
